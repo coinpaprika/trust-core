@@ -6,6 +6,8 @@
 
 import Foundation
 
+public typealias DashAddress = BitcoinAddress
+
 public final class Dash: Bitcoin {
     override public var coinType: SLIP.CoinType {
         return .dash
@@ -17,6 +19,10 @@ public final class Dash: Bitcoin {
 
     public override var p2pkhPrefix: UInt8 {
         return 0x4C
+    }
+
+    public override var p2shPrefix: UInt8 {
+        return 0x10
     }
 
     override public init(purpose: Purpose = .bip44) {
